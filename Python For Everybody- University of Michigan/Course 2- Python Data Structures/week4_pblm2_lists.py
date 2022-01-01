@@ -17,9 +17,12 @@ count=0
 data=open(fname)
 for line in data:
     words=line.rstrip().split()
+    if(len(words)<1):
+        continue
     if(words[0]=="From"):
         print(words[1])
         count=count+1
+        continue
     else:
         continue
 print("There were", count, "lines in the file with From as the first word")
